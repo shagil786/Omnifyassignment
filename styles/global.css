@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    color: #000;
+    background: #EBEEF0CC;
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+.border_gradient {
+    border: 1px solid;
+    border-image-source: linear-gradient(360deg, #E2E8F0 0%, #F8FAFC 100%);
+}
+
+.search_gradient {
+    box-shadow: 0px 1px 3px 0px #1018281A;
+    border: 1px solid #F8FAFC;
+}
+
+svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
+    box-sizing: border-box;
+}
