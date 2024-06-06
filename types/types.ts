@@ -146,7 +146,7 @@ export interface dateRangeProps {
 
 export interface datePickerProps {
     date: dateRangeProps;
-    setDate: React.Dispatch<React.SetStateAction<dateRangeProps | undefined>>;
+    setDate: React.Dispatch<React.SetStateAction<dateRangeProps>>;
     onChange?: ChangeEventHandler<HTMLInputElement> | undefined;
 }
 

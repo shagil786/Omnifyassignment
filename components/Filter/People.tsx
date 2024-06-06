@@ -9,7 +9,7 @@ import { useDeveloperData } from "@/utils/appContext";
 const People = () => {
   const [searchValue, setSearchValue] = useState("");
   const [searchData, setSearchData] = useState([]);
-  const {appData, setAppData} = useDeveloperData();
+  const {appData, setAppData}: any = useDeveloperData();
   const [checkedData, setCheckedData] = useState<Array<string>>(appData?.checkedData ?? []);
 
   const handleChange = (event: any) => {

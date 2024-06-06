@@ -1,4 +1,4 @@
-import { datePickerProps } from "@/types/types";
+import { datePickerProps, dateRangeProps } from "@/types/types";
 import moment from "moment";
 import React, { Fragment, useRef, useState } from "react";
 import Calendar from "./Calendar";
@@ -7,7 +7,8 @@ import Image from "next/image";
 import calenadarIcon from "@/public/images/calendar-days.svg";
 
 const DatePicker: React.FC<datePickerProps> = ({ date, setDate, onChange }) => {
-  const labels = ["from", "to"];
+  type DateKeys = keyof dateRangeProps;
+  const labels: DateKeys[] = ["from", "to"];
   const [focus, setFocus] = useState("");
   const calendarRef = useRef(null);
   const isClickOutside = useOutsideClick(calendarRef);
@@ -20,7 +21,7 @@ const DatePicker: React.FC<datePickerProps> = ({ date, setDate, onChange }) => {
 
   return (
     <div className="relative flex gap-4">
-      {labels?.map((each: string, index: number) => (
+      {labels?.map((each: DateKeys, index: number) => (
         <div className="flex flex-col capitalize">
           <label className="w-fit text-[10px]" htmlFor={each}>{each}</label>
           <div

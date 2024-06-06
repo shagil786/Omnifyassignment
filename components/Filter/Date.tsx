@@ -6,7 +6,7 @@ import { last30Days, thisMonth, thisQuarter, twoQuartersAgo } from "@/utils/date
 import { useDeveloperData } from "@/utils/appContext";
 
 const Date = () => {
-  const {appData, setAppData} = useDeveloperData();
+  const {appData, setAppData}: any = useDeveloperData();
   const [value, setValue] = useState<optionsProps>(appData?.dateType);
   const [dateRange, setDateRange] = useState<dateRangeProps>(appData?.dateRange)
   const handleChange = (each: optionsProps) => {

@@ -11,7 +11,7 @@ import { useDeveloperData } from "@/utils/appContext";
 const Services = () => {
   const radio = ["Search by name", "Search by tags"];
   const [searchValue, setSearchValue] = useState("");
-  const {appData, setAppData} = useDeveloperData();
+  const {appData, setAppData}: any = useDeveloperData();
   const [value, setValue] = useState<string>(appData?.searchBy ?? "Search by name");
   const [searchData, setSearchData] = useState<any>([]);
   const [checkedData, setCheckedData] = useState<Array<string>>(appData?.checkedData ?? []);
